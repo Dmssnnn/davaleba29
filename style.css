@@ -1,0 +1,34 @@
+#wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    border: 1px solid pink;
+    padding: 1%;
+}
+
+
+#forma {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#forma input {
+    width: 50%;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#forma textarea {
+    margin-top: 10px;
+    width: 50%;
+}
+#forma button {
+    margin-top: 30px;
+    width: 50%;
+    height: 50px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap"></div>
+
+    <form id="forma">
+      <input type="text" id="card-id" placeholder="card id">
+      <input type="text" id="post-id" placeholder="post  id">
+      <input type="text" id="name" placeholder="name">
+      <input type="text" id="email" placeholder="email">
+      <textarea name="text" id="body" cols="30" rows="10"></textarea>
+      <button id="submit">submit</button>
+    </form>
+  </div>
+
+<script>
+
+
+    const users = [
+    {
+    "postId": 1,
+    "id": 1,
+    "name": "id labore ex et quam laborum",
+    "email": "Eliseo@gardner.biz",
+    "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+  },
+  {
+    "postId": 1,
+    "id": 2,
+    "name": "quo vero reiciendis velit similique earum",
+    "email": "Jayne_Kuhic@sydney.com",
+    "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+  },
+  {
+    "postId": 1,
+    "id": 3,
+    "name": "odio adipisci rerum aut animi",
+    "email": "Nikita@garfield.biz",
+    "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+  },
+  {
+    "postId": 1,
+    "id": 4,
+    "name": "alias odio sit",
+    "email": "Lew@alysha.tv",
+    "body": "non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati"
+  },
+  {
+    "postId": 1,
+    "id": 5,
+    "name": "vero eaque aliquid doloribus et culpa",
+    "email": "Hayden@althea.biz",
+    "body": "harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et"
+  }
+    ]
+
+
+    const wrapper = document.getElementById("wrap")
+    const deletePost = (id) => {
+      const post = document.getElementById(id)
+      post.remove()
+    }
+
+    for(let i = 0 ; i < users.length; i++ ) {
+        const userList = document.createElement("div")
+        userList.classList.add('card')
+        userList.setAttribute('id', users[i].id)  // 1212121212 //
+       
+        userList.innerHTML = `
+          <h1>${users[i].name}</h1>
+          <p>${users[i].email}</p>
+          <p>${users[i].body}</p>
+          <button onclick="deletePost(${users[i].id})">Delete It </button>
+        `
+      
+        wrap.appendChild(userList)
+    }
+
+    const forma = document.getElementById("forma")
+    forma.addEventListener("submit",(e) => {
+      e.preventDefault()
+
+
+    const postId = document.getElementById("post-id").value
+    const cardId = document.getElementById("card-id").value
+    const cardName = document.getElementById("name").value
+    const cardEmail = document.getElementById("email").value
+    const cardBody = document.getElementById("body").value
+
+    const post = {
+      postId,
+      id: cardId,
+      cardName,
+      cardEmail,
+      cardBody
+    }
+    console.log(post)
+    users.push(post);
+
+
+    })
+
+
+</script>    
+</body>
+</html>
