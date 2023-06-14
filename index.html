@@ -101,8 +101,21 @@
       cardEmail,
       cardBody
     }
-    console.log(post)
-    users.push(post);
+    users.push(post)
+
+
+    const userList = document.createElement("div")
+        userList.classList.add('card')
+        userList.setAttribute('id', post.id)  // 1212121212 //
+       
+        userList.innerHTML = `
+          <h1>${post.cardName}</h1>
+          <p>${post.cardEmail}</p>
+          <p>${post.cardBody}</p>
+          <button onclick="deletePost(${post.id})">Delete It </button>
+        `
+      
+        wrap.appendChild(userList)
 
 
     })
